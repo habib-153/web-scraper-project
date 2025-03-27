@@ -3,7 +3,10 @@ from flask_cors import CORS
 from services.scraper_service import ScraperService
 
 app = Flask(__name__)
-CORS(app)  
+CORS(app, resources={r"/*": {"origins": [
+    "https://habib-153.github.io",  
+    "http://localhost:5173"         
+]}})
 scraper_service = ScraperService()
 
 
